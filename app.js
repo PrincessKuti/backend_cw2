@@ -6,7 +6,7 @@ const logger = require("./logger");
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("img"));
 app.use(logger);
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
