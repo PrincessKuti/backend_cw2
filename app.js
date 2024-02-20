@@ -6,11 +6,11 @@ const logger = require("./logger");
 
 const app = express();
 
+app.use(logger);
+app.use(bodyParser.json());
 app.use("/img", express.static("static/img/", {fallthrough: true})), (req, res, next)=> {
   next();
 };
-app.use(logger);
-app.use(bodyParser.json());
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
