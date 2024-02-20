@@ -6,7 +6,7 @@ const logger = require("./logger");
 
 const app = express();
 
-app.use("/img", express.static("/public", {fallthrough: true})), (req, res, next)=> {
+app.use("/img", express.static("static/img/", {fallthrough: true})), (req, res, next)=> {
   next();
 };
 app.use(logger);
